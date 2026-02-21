@@ -91,6 +91,8 @@ export default function HostGamePage() {
     const onConnect = () => {
       setConnected(true);
       socket.emit("host_join", { pin });
+      // Ensure the current question is broadcast again after reconnect.
+      lastBroadcastedIndex.current = -1;
     };
 
     const onDisconnect = () => setConnected(false);
@@ -333,7 +335,7 @@ export default function HostGamePage() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="card">
-          <div className="bg-white text-slate-900 p-8 rounded-2xl text-center text-2xl md:text-3xl font-bold mb-6 shadow-xl">
+          <div className="bg-white !text-slate-900 p-8 rounded-2xl text-center text-2xl md:text-3xl font-bold mb-6 shadow-xl">
             {currentQuestion.question_text}
           </div>
 

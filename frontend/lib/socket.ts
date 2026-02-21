@@ -1,6 +1,6 @@
 import { io, Socket } from 'socket.io-client';
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'http://localhost:8000';
+const WS_URL = 'https://certifiacate-app-1.onrender.com/';
 
 let socket: Socket | null = null;
 

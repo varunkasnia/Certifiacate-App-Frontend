@@ -3,9 +3,5 @@
   "outputDirectory": ".next",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@quiz_api_url",
-    "NEXT_PUBLIC_WS_URL": "@quiz_ws_url"
-  }
+  "framework": "nextjs"
 }
